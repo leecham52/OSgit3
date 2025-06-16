@@ -33,13 +33,48 @@ process status의 약자로 현재 사용중인 프로세스 정보를 확인할
 이는 top과도 비슷하다고 볼 수 있습니다만, 실제로 ps를 다른 옵션 없이 사용을 해보자면
 
 <img width="254" alt="ps" src="https://github.com/user-attachments/assets/7119c439-c56d-480b-a2b5-3252652b1f5b" />
+
 이와 같이 정말 짧은 줄만 나오게 됩니다. 
 위에 나온 정보는 지금 캡처된 shell에서 실행한 것에 대한 정보만을 보여주는 것이며, 
 ps의 풀네임과 같이 status를 그 순간에 실행된 것만 캡처해서 보여주는 형태로 나오게 됩니다.
 
-ps에도 3가지의 명령어가 있습니다. 
+ps에도 3가지 명령어가 있습니다. 
 |  명령어  |  설명  |
 |---|---|
 |  -e  |  현재 shell 뿐만 아닌 전체의 프로세스 정보 출력  |
+|  -f  |  보다 상세한 정보 출력  |
+|  -l  |  -f보다 상세한 정보 출력  |
+
+이렇게 3가지 명령어가 있으며, 이는 ps -e -f -l 과 같은 형태가 아닌, ps -efl 과 같은 형태로도 바로 실행이 가능합니다.
+<img width="854" alt="ps efl" src="https://github.com/user-attachments/assets/1de27e48-e2c0-48a5-b78e-99803c1e546e" />
+
+## 3. jobs
+
+이는 백그라운드 작업의 상태를 표시하는 명령어입니다.
+linux shell을 실행한 직후 바로 jobs 명령어를 써보면
+
+<img width="565" alt="jobs" src="https://github.com/user-attachments/assets/a38b32c3-9304-4c64-af7d-aa139e2b3140" />
+
+이처럼 아무것도 안 나옵니다.
+현재 백그라운드에 실행된 것이 없다는 걸 의미합니다. 
+그럼, 백그라운드에 ping 8.8.8.8 & 를 이용해서 구글에 ping을 날리면서 jobs 명령어를 실행해보면
+
+<img width="440" alt="jobs2" src="https://github.com/user-attachments/assets/ac92eea1-ad36-4172-8690-07c3f41af9fe" />
+
+이와 같이 Running ping 8.8.8.8 & 라고 뜨는 걸 확인할 수 있습니다.
+
+jobs의 명령어를 보자면
+|  명령어  |  설명  |
+|---|---|
+|  -l  |  PID와 JOB 목록 출력  |
+|  -n  |  프로세스 그룹 중 대표 PID 출력  |
+|  -p  |  JOB의 PID만 출력  |
+|  -r  |  실행중인 JOB만 출력  |
+|  -s  |  중지된 JOB만 출력  |
+
+이렇게 5가지의 명령어가 있는 것을 확인할 수 있습니다.
+
+## 4. kill
+
 
 
