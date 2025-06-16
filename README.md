@@ -76,5 +76,13 @@ jobs의 명령어를 보자면
 
 ## 4. kill
 
+kill 명령어는 특정 프로세스를 종료시킬 수 있는 명령어입니다.
+
+kill 에는 2가지 옵션이 존재하며, 이는 각각 -9 강제 종료, -15 정상 종료의 의미를 가지고 있습니다.
+사용방법은 kill -9 PID  or kill -15 PID 와 같은 형태로 사용 가능합니다.
+
+<img width="440" alt="kill" src="https://github.com/user-attachments/assets/308ba9cd-1384-4b95-ab49-8693877b0bcf" />
+
+ping 8.8.8.8 & 명령어를 통해 백그라운드에 ping이 실행되도록 한 상태에서, ping의 PID가 676이어서, 이미지에서 빨간색으로 표시에 둔 것과 같이, kill -9 676을 입력해주면 ping 프로세스가 종료되는 걸 확인할 수 있습니다.
 
 
